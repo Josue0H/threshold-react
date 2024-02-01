@@ -1,6 +1,6 @@
 export const thresholdPlugin = {
     id: 'thresholdPlugin',
-    afterRender: function(chart, easing) {
+    beforeDraw: function(chart, easing) {
         const ctx = chart.ctx;
         const threshold = chart.options.thresholdPlugin.threshold;
         const line1xy = chart._metasets[0]._parsed;        
@@ -46,7 +46,7 @@ export const thresholdPlugin = {
         ctx.lineTo(end.x, zero.y);
         ctx.lineTo(zero.x, zero.y);
 
-        ctx.fillStyle = 'rgba(255, 0, 0, 0.3)';
+        ctx.fillStyle = 'rgba(255, 0, 0, 0.6)';
         ctx.fill(); 
         ctx.closePath();
         ctx.restore();
